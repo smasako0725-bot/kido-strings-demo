@@ -285,10 +285,10 @@ body:not(.home) .band:not(.band--bench) {
     mask-repeat: no-repeat;
   }
   .home .band--services {
-    /* FVの下は一つの大きな山。写真への入口はゆるく沈み、右端で少し戻る波。 */
+    /* FVの下は山を左へ寄せ、解剖図の説明欄がある右側を深い谷にする。 */
     --wave-top-height: clamp(64px, 10vw, 160px);
     --wave-bottom-height: clamp(46px, 7vw, 112px);
-    --wave-top: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 110 C260 110 400 10 760 10 C1080 10 1230 78 1440 78 L1440 120 H0 Z'/%3E%3C/svg%3E");
+    --wave-top: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 62 C150 62 250 14 430 14 C650 14 735 112 1060 112 C1230 112 1340 82 1440 88 L1440 120 H0 Z'/%3E%3C/svg%3E");
     --wave-bottom: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 24 C280 6 610 110 970 110 C1190 110 1300 72 1440 64 L1440 0 H0 Z'/%3E%3C/svg%3E");
   }
   .home .band--records {
