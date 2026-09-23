@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 700" role="img" aria-label="アコースティックギターを正面から見た線画" style="color:#1a1d19">
+  <title>アコースティックギター 正面図</title>
+  <defs>
+    <path id="g-half" d="M150,372
+      C186,372 214,384 230,406
+      C240,420 243,436 241,452
+      C239,468 233,480 229,494
+      C226,506 227,518 231,530
+      C236,546 244,560 249,576
+      C257,600 258,628 249,650
+      C238,672 202,684 168,682
+      C162,682 156,682 150,682"/>
+  </defs>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+
+    <!-- ヘッド -->
+    <path d="M137,152 L133,96 C132,86 133,72 136,60 C138,50 143,45 150,45 C157,45 162,50 164,60 C167,72 168,86 167,96 L163,152 Z"/>
+    <g stroke-width="1.2">
+      <path d="M133,70 L120,70"/><circle cx="115" cy="70" r="4.2"/>
+      <path d="M133,90 L120,90"/><circle cx="115" cy="90" r="4.2"/>
+      <path d="M134,110 L121,110"/><circle cx="116" cy="110" r="4.2"/>
+      <path d="M167,70 L180,70"/><circle cx="185" cy="70" r="4.2"/>
+      <path d="M167,90 L180,90"/><circle cx="185" cy="90" r="4.2"/>
+      <path d="M166,110 L179,110"/><circle cx="184" cy="110" r="4.2"/>
+    </g>
+
+    <!-- 上ナット -->
+    <path d="M136,148 L164,148 L164,153 L136,153 Z" stroke-width="1.4"/>
+
+    <!-- 指板 -->
+    <path d="M137,153 L163,153 L168,423 L132,423 Z"/>
+    <!-- フレット -->
+    <g stroke-width="0.9" opacity="0.85">
+      <path d="M136.4,174 L163.6,174"/>
+      <path d="M135.8,195 L164.2,195"/>
+      <path d="M135.4,215 L164.6,215"/>
+      <path d="M135.0,234 L165.0,234"/>
+      <path d="M134.6,251 L165.4,251"/>
+      <path d="M134.3,268 L165.7,268"/>
+      <path d="M134.0,284 L166.0,284"/>
+      <path d="M133.8,298 L166.2,298"/>
+      <path d="M133.6,313 L166.4,313"/>
+      <path d="M133.4,326 L166.6,326"/>
+      <path d="M133.2,338 L166.8,338"/>
+      <path d="M133.0,350 L167.0,350"/>
+      <path d="M132.8,361 L167.2,361"/>
+      <path d="M132.7,372 L167.3,372"/>
+      <path d="M132.5,382 L167.5,382"/>
+      <path d="M132.4,391 L167.6,391"/>
+      <path d="M132.3,400 L167.7,400"/>
+      <path d="M132.2,408 L167.8,408"/>
+      <path d="M132.1,416 L167.9,416"/>
+    </g>
+    <!-- ポジションマーク -->
+    <g fill="currentColor" stroke="none" opacity="0.7">
+      <circle cx="150" cy="205" r="2.6"/>
+      <circle cx="150" cy="242" r="2.6"/>
+      <circle cx="150" cy="276" r="2.6"/>
+      <circle cx="150" cy="305" r="2.6"/>
+      <circle cx="143" cy="344" r="2.6"/><circle cx="157" cy="344" r="2.6"/>
+      <circle cx="150" cy="377" r="2.6"/>
+      <circle cx="150" cy="395" r="2.6"/>
+      <circle cx="150" cy="412" r="2.6"/>
+    </g>
+
+    <!-- 本体 輪郭 -->
+    <g class="g-body">
+      <use href="#g-half"/>
+      <use href="#g-half" transform="translate(300,0) scale(-1,1)"/>
+    </g>
+    <g stroke-width="0.7" opacity="0.7">
+      <g transform="translate(150,527) scale(0.955,0.972) translate(-150,-527)">
+        <use href="#g-half"/>
+        <use href="#g-half" transform="translate(300,0) scale(-1,1)"/>
+      </g>
+    </g>
+
+    <!-- サウンドホールとロゼッタ -->
+    <circle cx="150" cy="465" r="34" stroke-width="1.6"/>
+    <circle cx="150" cy="465" r="39" stroke-width="0.8" opacity="0.8"/>
+    <circle cx="150" cy="465" r="41.5" stroke-width="0.8" opacity="0.8"/>
+
+    <!-- ブリッジ -->
+    <g class="g-bridge">
+      <path d="M96,548 C96,540 100,536 109,536 L191,536 C200,536 204,540 204,548 C204,556 200,560 191,560 L109,560 C100,560 96,556 96,548 Z"/>
+      <path d="M114,542 L186,542" stroke-width="2.2"/>
+      <g fill="currentColor" stroke="none">
+        <circle cx="118" cy="553" r="2.4"/><circle cx="131" cy="553" r="2.4"/>
+        <circle cx="144" cy="553" r="2.4"/><circle cx="157" cy="553" r="2.4"/>
+        <circle cx="170" cy="553" r="2.4"/><circle cx="183" cy="553" r="2.4"/>
+      </g>
+    </g>
+
+    <!-- 弦 6本 -->
+    <g stroke-width="0.8" opacity="0.85">
+      <path d="M139,150 L118,542"/>
+      <path d="M143.4,150 L131,542"/>
+      <path d="M147.8,150 L144,542"/>
+      <path d="M152.2,150 L157,542"/>
+      <path d="M156.6,150 L170,542"/>
+      <path d="M161,150 L183,542"/>
+    </g>
+  </g>
+</svg>

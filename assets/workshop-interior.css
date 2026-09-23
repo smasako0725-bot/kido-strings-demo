@@ -1,0 +1,62 @@
+/* 工房のこと：内観写真だけを画面に固定し、本文は通常の流れを保つ。 */
+.interior-wave-defs { position: absolute; pointer-events: none; }
+.page--workshop .band--interior {
+  position: relative;
+  isolation: isolate;
+  clip-path: url("#interior-wave");
+  background: #21150e;
+  color: #eee9df;
+  --bone: #eee9df;
+  --bone-soft: #ddd5c9;
+  --rule-dark: rgba(231, 228, 216, .35);
+  padding-bottom: calc(clamp(3.5rem, 8vw, 7rem) + 4rem);
+  border: 0;
+}
+.page--workshop .band--interior::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, rgba(22, 13, 7, .55), rgba(22, 13, 7, .62) 62%, rgba(22, 13, 7, .28)),
+    url("../images/workshop-interior.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.page--workshop .band--interior > .wrap { position: relative; z-index: 1; }
+.page--workshop .band--interior .figure-wide img {
+  filter: brightness(0) invert(93%) sepia(10%) saturate(230%);
+}
+.page--workshop .band--interior + .band { border-top: 0; }
+/* 曲線に沿った約200pxのフェード。末尾を重ね、ぼかしの端を直線で切らない。 */
+@supports (mask-image: linear-gradient(black, black)) or (-webkit-mask-image: linear-gradient(black, black)) {
+  .page--workshop .band--interior {
+    clip-path: inset(0);
+    padding-bottom: calc(clamp(3.5rem, 8vw, 7rem) + 4rem + 128px);
+    margin-bottom: -128px;
+    --interior-soft-wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 320' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cfilter id='soft' x='0' y='-100%25' width='100%25' height='300%25' color-interpolation-filters='sRGB'%3E%3CfeGaussianBlur stdDeviation='0 32'/%3E%3C/filter%3E%3C/defs%3E%3Cpath fill='white' filter='url(%23soft)' d='M0 -200 H1000 V168 C760 210 490 102 240 129 C120 142 50 168 0 162 Z'/%3E%3C/svg%3E");
+    -webkit-mask-image: linear-gradient(black, black), var(--interior-soft-wave);
+    mask-image: linear-gradient(black, black), var(--interior-soft-wave);
+    -webkit-mask-size: 100% calc(100% - 319px), 100% 320px;
+    mask-size: 100% calc(100% - 319px), 100% 320px;
+    -webkit-mask-position: top, bottom;
+    mask-position: top, bottom;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+}
+@media (max-width: 48rem) {
+  .page--workshop .band--interior::before {
+    background-position: 72% center;
+    background-image: linear-gradient(rgba(22, 13, 7, .72), rgba(22, 13, 7, .72)), url("../images/workshop-interior.jpg");
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page--workshop .band--interior::before { position: absolute; }
+}
+@supports not (clip-path: inset(0)) {
+  .page--workshop .band--interior { overflow: hidden; }
+  .page--workshop .band--interior::before { position: absolute; }
+}

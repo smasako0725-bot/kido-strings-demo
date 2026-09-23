@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 700" style="color:#1a1d19" role="img" aria-label="ヴァイオリンを正面から見た線画">
+  <title>ヴァイオリン 正面図</title>
+  <defs>
+    <path id="v-half" d="M120,250
+      C143,250 163,257 174,272
+      C188,290 197,304 197,322
+      C197,342 194,358 190,370
+      L193,377
+      C185,385 176,398 172,412
+      C170,420 170,430 172,438
+      C176,452 185,464 193,472
+      L190,479
+      C195,491 205,504 210,518
+      C216,534 217,554 212,570
+      C206,589 191,601 172,605
+      C155,608 137,607 120,606"/>
+    <g id="v-fhole">
+      <circle cx="3" cy="6" r="4.0"/>
+      <circle cx="-3" cy="80" r="5.4"/>
+      <path d="M3,6 C6,22 5,32 3.5,42 C2,52 -1,64 -3,80" fill="none" stroke-width="2.6" stroke-linecap="round"/>
+      <rect x="3.2" y="38.4" width="5.6" height="2.0"/>
+      <rect x="-3.4" y="45.8" width="5.6" height="2.0"/>
+    </g>
+  </defs>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+
+    <!-- 渦巻 -->
+    <g class="v-scroll">
+      <path d="M108,48 C104,36 108,22 119,15 C131,7 145,12 149,24 C153,36 146,47 135,48 C126,49 119,43 119,35 C119,28 124,23 131,24 C136,25 139,29 138,34 C137,38 133,40 130,38"/>
+      <path d="M136,48 C141,52 142,60 141,70"/>
+    </g>
+
+    <!-- 糸巻箱 -->
+    <path d="M105,104 L108,52 C109,44 113,40 119,39 L127,39 C133,40 137,44 138,52 L141,104"/>
+    <!-- 糸巻 4本 -->
+    <g class="v-pegs">
+      <path d="M141,60 L156,60"/><ellipse cx="160" cy="60" rx="4.6" ry="8"/>
+      <path d="M141,84 L156,84"/><ellipse cx="160" cy="84" rx="4.6" ry="8"/>
+      <path d="M105,72 L90,72"/><ellipse cx="86" cy="72" rx="4.6" ry="8"/>
+      <path d="M105,96 L90,96"/><ellipse cx="86" cy="96" rx="4.6" ry="8"/>
+    </g>
+
+    <!-- ネック -->
+    <path d="M104,110 L96,252"/>
+    <path d="M136,110 L144,252"/>
+    <!-- 上ナット -->
+    <path d="M105,104 L135,104 L136,110 L104,110 Z"/>
+
+    <!-- 指板 -->
+    <path class="v-fingerboard" d="M107,110 L133,110 L143,320 L97,320 Z"/>
+
+    <!-- 本体 輪郭 -->
+    <g class="v-body">
+      <use href="#v-half"/>
+      <use href="#v-half" transform="translate(240,0) scale(-1,1)"/>
+    </g>
+    <!-- パフリング（縁の象嵌） -->
+    <g class="v-purfling" stroke-width="0.7" opacity="0.75">
+      <g transform="translate(120,428) scale(0.952,0.974) translate(-120,-428)">
+        <use href="#v-half"/>
+        <use href="#v-half" transform="translate(240,0) scale(-1,1)"/>
+      </g>
+    </g>
+
+    <!-- f字孔 -->
+    <g class="v-fholes" fill="currentColor" stroke="currentColor">
+      <use href="#v-fhole" transform="translate(146,424)"/>
+      <use href="#v-fhole" transform="translate(240,0) scale(-1,1) translate(146,424)"/>
+    </g>
+
+    <!-- 駒 -->
+    <g class="v-bridge">
+      <path d="M99,468 L101,468 L102,459 C103,452 107,448 112,446 L112,443 L128,443 L128,446 C133,448 137,452 138,459 L139,468 L141,468"
+            fill="none" stroke-width="1.8"/>
+      <path d="M112,452 C116,451 124,451 128,452"/>
+      <circle cx="108" cy="461" r="2.6"/>
+      <circle cx="132" cy="461" r="2.6"/>
+      <path d="M104,468 L104,462 M136,468 L136,462"/>
+    </g>
+
+    <!-- 弦 4本 -->
+    <g class="v-strings" stroke-width="0.9" opacity="0.9">
+      <path d="M110,106 L106,462 L112,502"/>
+      <path d="M116,106 L115,462 L117,502"/>
+      <path d="M124,106 L125,462 L123,502"/>
+      <path d="M130,106 L134,462 L128,502"/>
+    </g>
+
+    <!-- テールピース -->
+    <path class="v-tailpiece" d="M106,500 L134,500 L131,558 C130,568 126,574 120,576 C114,574 110,568 109,558 Z"/>
+    <path d="M120,576 L120,600"/>
+    <ellipse cx="120" cy="604" rx="5" ry="4"/>
+  </g>
+</svg>

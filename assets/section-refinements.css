@@ -1,0 +1,6 @@
+/* 添付対象の3ページ：冒頭の本文〜波形にも、次の帯と同程度の余白を確保。 */
+@supports (mask-image: linear-gradient(black, black)) or (-webkit-mask-image: linear-gradient(black, black)) {
+  body:is(.page--repair, .page--records, .page--workshop) .opener {
+    padding-bottom: calc(clamp(3.5rem, 8vw, 7rem) + var(--page-wave-in-height));
+  }
+}

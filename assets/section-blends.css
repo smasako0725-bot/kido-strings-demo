@@ -1,0 +1,47 @@
+/* 残りの下層2ページも、境界の上下で同程度の余白にする。 */
+@supports (mask-image: linear-gradient(black, black)) or (-webkit-mask-image: linear-gradient(black, black)) {
+  body:is(.page--diagnosis, .page--contact) .opener {
+    padding-bottom: calc(clamp(3.5rem, 8vw, 7rem) + var(--page-wave-in-height));
+  }
+  /* 診断ページは波が下へ沈む分を差し引いて、見た目の上下余白を揃える。 */
+  body.page--diagnosis .opener {
+    padding-bottom: calc(clamp(3.5rem, 8vw, 7rem) + var(--page-wave-in-height) / 2);
+  }
+  /* ギターの背景だけを上下の同素材へ重ねてクロスフェード。
+     本文・料金表の位置と鮮明さは変えない。 */
+  .page--repair { --guitar-blend: clamp(64px, 8vw, 128px); }
+  .page--repair #violin {
+    padding-bottom: calc(clamp(3.5rem, 8vw, 7rem) + var(--guitar-blend));
+    margin-bottom: calc(-1 * var(--guitar-blend));
+  }
+  .page--repair #guitar {
+    position: relative;
+    z-index: 3;
+    background: transparent;
+    border: 0;
+  }
+  .page--repair #guitar::before {
+    content: "";
+    position: absolute;
+    /* フェードの中心を、隣接する本文同士の余白の中央に置く。 */
+    inset: calc(var(--guitar-blend) / -2) 0;
+    pointer-events: none;
+    /* 薄いカーキベージュを重ね、漆喰の柄と上下のフェードを残す。 */
+    background:
+      linear-gradient(rgb(160 146 108 / 23%), rgb(160 146 108 / 23%)),
+      var(--paper) url("../images/plaster-background.png") center top / max(100vw, 64rem) auto repeat-y;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black var(--guitar-blend), black calc(100% - var(--guitar-blend)), transparent);
+    mask-image: linear-gradient(to bottom, transparent, black var(--guitar-blend), black calc(100% - var(--guitar-blend)), transparent);
+  }
+  .page--repair #guitar > .wrap { position: relative; }
+  .page--repair #bow {
+    padding-top: calc(clamp(3.5rem, 8vw, 7rem) + var(--guitar-blend));
+    margin-top: calc(-1 * var(--guitar-blend));
+    border-top: 0;
+  }
+}
+
+/* 相談フォームは紙面から明確に区別できる白い入力面にする。 */
+.page--contact .field :is(input, select, textarea) {
+  background-color: #fff;
+}
